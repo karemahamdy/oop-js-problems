@@ -92,6 +92,47 @@ const calc2 = new Rectangle (2,5)
 console.log(calc2.getArea())
 console.log(calc2.getperimeter())
 
+//  second method 
+//  const Rectangle = function(width,height){
+//   this.width = width
+//   this.height= height 
+
+// this.getArea =function() {
+//   return this.width * this.height
+//  }
+//  this.getperimeter =function() {
+//   return 2 * (this.width + this.height);
+//  }
+// }
+//  const calc1 = new Rectangle (12,15)
+//  console.log(calc1.getArea())
+//  console.log(calc1.getperimeter())
+ 
+//  const calc2 = new Rectangle (2,5)
+//  console.log(calc2.getArea())
+//  console.log(calc2.getperimeter())
+
+//method 3
+// const Rectangle = {
+//   getArea(){
+//     return this.width * this.height
+//    },
+//    getperimeter(){
+//    return 2 * (this.width + this.height);
+//    },
+
+//     init(width,height){
+//     this.width = width
+//     this.height = height
+//   }
+
+// }
+// const steven = Object.create(Rectangle);
+// steven.width = 15;
+// steven.height = 20;
+// steven.getArea();
+// steven.getperimeter();
+
 
 // Write a JavaScript program that creates a class called 'Vehicle' with properties for make, model, and year. 
 // Include a method to display vehicle details.
@@ -128,6 +169,37 @@ displayDetails(){
 const jeep = new Car("jeep","209",2005,4)
 console.log(jeep)
 jeep.displayDetails()
+
+// method object.create
+// const vehiclePrototype = {
+//   displayDetails: function() {
+//     console.log(`make: ${this.make}`);
+//     console.log(`model: ${this.model}`);
+//     console.log(`year: ${this.year}`);
+//   }
+// };
+
+// const vehicle2 = Object.create(vehiclePrototype);
+// vehicle2.make = "bm";
+// vehicle2.model = "2019";
+// vehicle2.year = 2002;
+// vehicle2.displayDetails();
+
+// const carPrototype = Object.create(vehiclePrototype);
+// carPrototype.displayDetails = function() {
+//   vehiclePrototype.displayDetails.call(this);
+//   console.log(`doors: ${this.doors}`);
+// };
+
+// const car2 = Object.create(carPrototype);
+// car2.make = "jeep";
+// car2.model = "209";
+// car2.year = 2005;
+// car2.doors = 4;
+
+// console.log(car2);
+// car2.displayDetails();
+
 
 // Write a JavaScript program that creates a class called "BankAccount" with properties for account number and balance. 
 // Include methods to deposit and withdraw money from the account. 
