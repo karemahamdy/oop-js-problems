@@ -198,3 +198,44 @@ console.log(`Circle Area: ${circleArea}`);
 const rectangle = new Rctangle(8, 9);
 const rectangleArea = rectangle.calculateArea();
 console.log(`Rectangle Area: ${rectangleArea}`);
+
+// Write a JavaScript program that creates a class called 'Employee' with properties for name and salary.
+//  Include a method to calculate annual salary.
+//  Create a subclass called 'Manager' that inherits from the 'Employee' class and adds an additional property for department. 
+// Override the annual salary calculation method to include bonuses for managers. Create two instances of the 'Manager' class
+// and calculate their annual salary.
+
+class Employee {
+  constructor(name, salary) {
+    this.name = name;
+    this.salary = salary;
+    console.log(`Name of the Employee: ${name}`);
+    console.log(`Monthly Salary: $${salary}`);
+  }
+
+ calculateAnnualSalary() {
+    return this.salary * 12;
+  }
+}
+class Manager extends Employee {
+  constructor(name, salary, department){
+    super(name, salary)
+    this.department = department
+  }
+  calculateAnnualSalary(){
+    const baseSalary = super.calculateAnnualSalary();
+    const bonus = 0.1; 
+    console.log(`Bonus (10% of the base salary): ${bonus}`);
+    return (bonus * baseSalary) + baseSalary;
+  }
+}
+
+const manager1 = new Manager('Karema', 5000, 'Frontend');
+const annualSalary1 = manager1.calculateAnnualSalary();
+
+console.log(`Manager: ${manager1.name}`);
+console.log(`Department: ${manager1.department}`);
+console.log(`Annual Salary: $${annualSalary1}`);
+
+
+// 
