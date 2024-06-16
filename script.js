@@ -279,3 +279,33 @@ university.addDepartment('Mathematics');
 university.removeDepartment('Mathematics');
 university.displayDepartments();
 
+// write a program class that takes name and password and protect once and another private 
+class User{
+  constructor(name, password){
+      this._name = name
+      this._password = password
+  }
+}
+
+const karema = new User("karema", 123456)
+console.log(karema._password);
+
+
+class User1{
+  #name1
+  constructor(name1, password){
+      this.#name1 = name1
+      this._password = password
+  }
+  
+ 
+  #printName(){
+    console.log(this.#name1);
+}
+PrintFromPrivateMethod(){
+  this.#printName()
+}
+}
+
+const kedar = new User1("kedar", 123456)
+kedar.PrintFromPrivateMethod()
