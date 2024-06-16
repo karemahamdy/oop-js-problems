@@ -238,4 +238,44 @@ console.log(`Department: ${manager1.department}`);
 console.log(`Annual Salary: $${annualSalary1}`);
 
 
-// 
+// Write a JavaScript program that creates a class called University with properties for university name and departments.
+//  Include methods to add a department, remove a department, and display all departments.
+//  Create an instance of the University class and add and remove departments.
+
+class University {
+  constructor(name){
+   this.name = name
+   this.departments = [];
+  }
+  addDepartment(department){
+    this.departments.push(department);
+    console.log(  this.departments)
+  }
+  removeDepartment(department) {
+    const index = this.departments.indexOf(department) 
+    if (department !== -1) {
+      this.departments.splice(index, 1);
+      console.log(`Department "${department}" removed from ${this.name}.`);
+    } else {
+      console.log("nothing here")
+    }
+  }
+  displayDepartments() {
+    console.log(`Departments in ${this.name}:`);
+    if (this.departments.length === 0) {
+      console.log('No departments available.');
+    } else {
+      this.departments.forEach((department, index) => {
+        console.log(`${index + 1}. ${department}`);
+      });
+    }
+  }
+}
+
+const university = new University('ABC University');
+university.displayDepartments(); 
+university.addDepartment('Science');
+university.addDepartment('Mathematics');
+university.removeDepartment('Mathematics');
+university.displayDepartments();
+
